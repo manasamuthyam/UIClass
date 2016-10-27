@@ -1,0 +1,169 @@
+Homework - 1
+*****************
+
+1) What is repository and why do we need to use it?
+
+     -  The purpose of Git is to manage a project, or a set of files, as they change over time. Git stores this information in a
+        data structure called a repository.
+     -  A directory or storage space where your projects can live. 
+     -  It can be local to a folder on your computer, or it can be a storage space on GitHub or another online host. 
+        You can keep code files, text files, image files, you name it, inside a repository.
+     -  The Git repository is stored in the same directory as the project itself, in a subdirectory called .git. 
+     -   A repository is usually used to organize a single project. 
+     -   Repositories can contain folders and files, images, videos, spreadsheets, and data sets – anything your project needs. 
+        
+         References:
+         
+         http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/
+
+         https://www.sbf5.com/~cduan/technical/git/git-1.shtml
+
+         https://guides.github.com/activities/hello-world/
+
+         http://blog.udacity.com/2015/06/a-beginners-git-github-tutorial.html
+
+         https://help.github.com/articles/create-a-repo/
+
+2) What is Git? Why do we use it?
+
+    -  Git  is a version control system that is used for software development and other version control tasks. 
+    -  As a distributed revision control system it is aimed at speed, data integrity,[ and support for
+       distributed,non-linearworkflows
+    -  As with most other distributed version control systems, and unlike most client–server systems, every Git directory on every
+       computer is a full-fledged repository 
+       with complete history and full version-tracking capabilities, independent of network access or a central server.
+    -  Git serves as the foundation for many services, like GitHub and GitLab, but you can use Git without using any other service. 
+       This means that you can use Git privately or publicly.
+    -  source code management system which keeps all the old and new versions of code and track who changed the code when changed
+       the code and what part of code developer changed and also can see commit log to know why he changed and why he made that changes in code.
+
+       Why to Use Git:
+       
+     -  Git tracks state, history and integrate of the source tree
+     -  Git keeps old versions for you if some developer did any mistake in code then you’ll always have previous version to fix it
+     -  Multiple developers can work together, once they write code in their local machine and commit it then other developers can
+        pull it easily.
+     -  Large developers community and online websites to upload your source codes or get others source codes to make your work
+        easier
+     -  Lots of software available for both who comfortable with command line and for others GUI tools
+     -  Easy and clear documentation to get started with
+     -  Git will not use much bandwidth you don’t have to connect with your server always you just need to connect to push code when
+        you are done
+
+
+        References:
+      
+        https://en.wikipedia.org/wiki/Git
+
+        https://opensource.com/resources/what-is-git
+
+        https://www.siteground.com/tutorials/git/
+
+        https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control
+ 
+        https://www.youtube.com/watch?v=_vEPmy31XDE
+ 
+
+3) What is Github and why do we use it?
+
+     -  GitHub is a web-based Git repository hosting service. 
+     -  It offers all of the distributed version control and source code management (SCM) functionality of Git as well as adding its
+        own features. 
+     -  It provides access control and several collaboration features such as bug tracking, feature requests, task management, and
+        wikis for every project.
+
+     Github allows you to:
+
+     -  Share your repositories with others.
+     -   Access other user's repositories.
+     -   Store remote copies of your repositories (github servers) as backup of your local copies
+     -   GitHub has flexible review processes and prioritizes continuous integration, applying those benefits to documentation
+         reviews and builds gives you the benefit of content management while bridging to sharing knowledge with subject matter experts. 
+     -   GitHub is a great match for when developers are writing documentation in source control. GitHub works well when a project
+         is so large or distributed that no one person can know enough to write the documentation for the project. 
+
+     References:
+
+     https://techcrunch.com/2012/07/14/what-exactly-is-github-anyway/
+
+     http://readwrite.com/2013/09/30/understanding-github-a-journey-for-beginners-part-1/
+
+     https://en.wikipedia.org/wiki/GitHub
+
+     http://kbroman.org/github_tutorial/pages/why.html
+
+     http://www.storybench.org/use-github-lessons-classroom-newsroom/
+
+
+4) What is the difference between GIT and GITHUB?
+
+    -  Git is a revision control system, a tool to manage your source code history. GitHub is a hosting service for Git repositories.
+    -  Git is a tool, GitHub is the service for projects that use Git.
+    -  Concepts from Git: Repositories, branches, remotes, committing, pushing, pulling, merging, rebasing, reverting, and
+       cherry-picking.
+       Concepts from GitHub: Pull requests, issues, wikis, forking someone else's repository, Gists, github.com.
+    -  Git is the distributed version control system. 
+       GitHub is a company that provides Git repository hosting.
+    -  Git lives locally, on your computer
+       GitHub lives remotely, on the Internet
+
+       References:
+
+       http://stephaniehoh.github.io/blog/2013/10/07/git-vs-github-for-dummies/
+
+       http://stackoverflow.com/questions/13321556/difference-between-git-and-github
+
+       https://www.quora.com/What-is-the-difference-between-Git-and-GitHub
+
+       http://softwareengineering.stackexchange.com/questions/173321/conceptual-difference-between-git-and-github
+       
+       https://www.linkedin.com/pulse/git-flow-vs-github-luca-mezzalira
+
+5) What is Source tree? Why do we use it?
+
+    -  It is an easy to use graphical Git client which can connect to both local and remote (hosted) Git repositories 
+    -  SourceTree simplifies how you interact with Git and Hg repositories so you can focus on coding. Manage all your repositories
+       hosted or local – through SourceTree's simple interface.
+    
+    Why use SourceTree?
+
+    -  SourceTree has some great features that make working with Git easy, streamlining the way that you work with your project
+       code. 
+
+       So, here are my top 5 reasons to start using it!....
+
+       1. Branch management
+           It enables you to switch working copies with a single click. It also tells you how far ahead or behind you are to the version in the repository, and alerts you to push or pull.
+       2. Working copy
+           Using the command line can sometimes feel like you are working in the dark. The 'Working Copy' section shows the difference between your local copy and the version in the Git repository. This gives you a 'real time' view of your local files, so you can see exactly what you have changed.
+       3. Branch history
+           Each commit and file change is displayed and accessible, providing a very powerful tool for version control. This alone is a huge benefit for projects which are worked on regularly by multiple developers.
+       4. GitFlow
+           GitFlow adds a structured process to your workflow, which ensures that parallel code changes are completed without many hiccups, and it's a two click setup! 
+ 
+        References:
+
+       http://tutorials.jenkov.com/git/index.html
+
+       http://rancoud.com/sourcetree-git-use/
+
+       https://de.atlassian.com/software/sourcetree/overview/
+
+       http://sagittarius.agency/blog/5-reasons-to-use-sourcetree-for-git
+
+       https://dev.arvados.org/projects/arvados/wiki/Source_Tree_Overview
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     

@@ -1,0 +1,343 @@
+Homework 2:
+***********
+1)Explain Clone,Commit and Push commands.
+
+  Commit: Takes all of the changes written in the index, creates a new commit object pointing to it and sets the branch to point
+          to that new commit. 
+
+          Now that you have staged the content you want to snapshot with the git add command, you run git commit to actually record the snapshot. 
+
+          Examples:      
+          git commit -m ‘committing added changes’
+          git commit -a -m ‘committing all changes, equals to git add and git commit’
+
+  Clone:  Every version of every file for the history of the project is pulled down when you run git clone. In fact, if your server
+          disk gets corrupted, you can use any of the clones on any client to set the server back to the state it was in when it was cloned (you may lose some server-side hooks and such, but all the versioned data would be there)
+
+          If you want to get a copy of an existing Git repository — the command you need is 
+          git clone
+
+          create a working copy of a local repository by running the command 
+          git clone /path/to/repository
+
+          when using a remote server, your command will be
+          git clone username@host:/path/to/repository
+
+          You clone a repository with git clone [url]. For example, if you want to clone the Ruby Git library called Grit, you can do so like this:
+
+          $ git clone git://github.com/schacon/grit.git
+          
+          That creates a directory named grit, initializes a .git directory inside it, pulls down all the data for that repository, and checks out a working copy of the latest version. If you go into the new grit directory, you’ll see the project files in there, ready to be worked on or used. 
+
+          If you want to clone the repository into a directory named something other than grit, you can specify that as the next command-line option:
+
+          $ git clone git://github.com/schacon/grit.git mygrit
+          
+          That command does the same thing as the previous one, but the target directory is called mygrit.
+
+   Push:  Pushes all the modified local objects to the remote repository and advances its branches. 
+          Example: git push origin master
+
+          Your changes are now in the HEAD of your local working copy. To send those changes to your remote repository, execute
+
+          git push origin master.
+
+          Change master to whatever branch you want to push your changes to. 
+
+          If you have not cloned an existing repository and want to connect your repository to a remote server, you need to add it with
+
+          git remote add origin <server>
+
+          Now you are able to push your changes to the selected remote server.
+
+
+
+          References:
+
+          https://scotch.io/bar-talk/git-cheat-sheet
+
+          file:///C:/Users/mickey/Downloads/atlassian_git_cheatsheet.pdf
+
+          http://rogerdudler.github.io/git-guide/
+
+          https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
+          https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History
+
+
+2) What is Local Repository and remote repository?
+
+   The local repository refers to a copy on your own installation that is a cache of the remote downloads, and also contains the temporary build artifacts that you have not yet released. 
+
+   Remote repositories refer to any other type of repository, accessed by a variety of protocols such as file:// and http://.
+   
+   Remote Repository
+
+   Typically, we work in teams and need to work on a codebase together.  The codebase is on a “central” server and people retrieve files from it and commit to it.
+
+   Git refers to the centralized server as a “remote repository”.  The remote repo is usually not on your machine and is the one shared by the team. The team “pushes” commits to it when ready to share with the team. While one of your remote repos could be another team member’s local repo, in a corporate environment at least one (or the only!) is typically a Git repo on a server anointed as the central/official repo.
+
+   Note that a remote repo is optional.  When not sharing code with others, there is technically no need for a remote repo (you may want one for backup or CI).  There is also no need for a remote repo if your local repo is considered the central one by all team members (which means your local repo is their remote repo).
+
+   Local Repository
+   
+   The local repo is on your computer and has all the files and their commit history, enabling full diffs, history review, and committing when offline.  This is one of the key features of a “distributed” version control system (DVCS), locally having the full repository history.
+
+   References:
+
+   http://maven.apache.org/guides/introduction/introduction-to-repositories.html
+
+   https://www.intertech.com/Blog/introduction-to-git-concepts/
+
+   http://stackoverflow.com/questions/29567326/git-local-vs-remote-repository
+
+   http://www.petermac.com/setup-git-local-and-remote-repositories/
+
+   https://www.tutorialspoint.com/maven/maven_repositories.htm
+
+3) What are branches? How to create a branch,check out a branch? Write about branching strategies.
+
+   A branch represents an independent line of development. Branches serve as an abstraction for the edit/stage/commit process 
+
+   Branching means you diverge from the main line of development and continue to do work without messing with that main line. 
+
+   Branches are used to develop features isolated from each other. The master branch is the "default" branch when you create a repository. Use other branches for development and merge them back to the master branch upon completion.
+
+   A branch in Git is simply a lightweight movable pointer to the commits. The default branch name in Git is master. As you start making commits, you’re given a master branch that points to the last commit you made. Every time you commit, it moves forward automatically.
+
+   NOTE:
+   The “master” branch in Git is not a special branch. It is exactly like any other branch. The only reason nearly every repository has one is that the git init command creates it by default and most people don’t bother to change it.
+   
+   A way to request a brand new working directory, staging area, and project history. New commits are recorded in the history for the current branch, which results in a fork in the history of the project.
+
+   The git branch command lets you create, list, rename, and delete branches. It doesn’t let you switch between branches or put a forked history back together again. For this reason, git branch is tightly integrated with the git checkout and git merge commands.
+
+   Usage: 
+   git branch
+   List all of the branches in your repository.
+
+   git branch <branch>
+   Create a new branch called <branch>. This does not check out the new branch.
+
+   git branch -d <branch>
+   Delete the specified branch. This is a “safe” operation in that Git prevents you from deleting the branch if it has unmerged changes.
+
+   git branch -D <branch>
+   Force delete the specified branch, even if it has unmerged changes. This is the command to use if you want to permanently throw away all of the commits associated with a particular line of development.
+
+   git branch -m <branch>
+   Rename the current branch to <branch>.
+
+   Creating Branches
+   It's important to understand that branches are just pointers to commits. When you create a branch, all Git needs to do is create a new pointer—it doesn’t change the repository in any other way. 
+
+   you create a branch using the following command:
+
+   git branch crazy-experiment
+   The repository history remains unchanged. All you get is a new pointer to the current commit.Note that this only creates the new branch. To start adding commits to it, you need to select it with git checkout, and then use the standard git add and git commit commands.
+
+   git checkout:
+
+   The git checkout command lets you navigate between the branches created by git branch. Checking out a branch updates the files in the working directory to match the version stored in that branch, and it tells Git to record all new commits on that branch. Think of it as a way to select which line of development you’re working on.
+
+   Checking out branches is similar in that the working directory is updated to match the selected branch/revision; however, new changes are saved in the project history—that is, it’s not a read-only operation.
+
+   Usage
+   git checkout <existing-branch>
+   Check out the specified branch, which should have already been created with git branch. This makes <existing-branch> the current branch, and updates the working directory to match.
+
+   git checkout -b <new-branch>:
+
+   Create and check out <new-branch>. The -b option is a convenience flag that tells Git to run git branch <new-branch> before running git checkout <new-branch>. 
+
+   git checkout -b <new-branch> <existing-branch>
+   Same as the above invocation, but base the new branch off of <existing-branch> instead of the current branch.
+
+   Git branching strategy:
+
+   At a very high level, all branching strategies have the same core policies: create the branch when you are confident that the cost of branching and merging is less than the cost of committing to the main source line, and merge when you are “done, done” making changes in that branch.
+
+   You can branch per iteration or sprint, branch per sub-team, branch-per-release, branch per feature or defect, etc. Most likely, though, you will find yourself in scenarios where a policy of a single branching strategy is not feasible. The real world is full of fun surprises and little nuances that can make a single strategy good, bad or otherwise – all within the same project.
+
+   Having multiple branching strategies available in your toolbox will undoubtedly create new opportunities to sustain or improve the performance of your team.
+
+   Branch Per Feature
+   A branch is created for a feature to be developed from the start of work on that feature, to it’s completion. Once the feature is ready to go you merge it back into the main source line or into another branch for continued work. Multiple feature teams can work in parallel without immediately affecting each other. When FeatureTeamA completes their work and merges back into the main source line, FeatureTeamB is then required to merge the changes into their branch so that they have the correct foundation of code to work from.
+
+   Branch Per Iteration/Sprint:
+   Branching per iteration or sprint is used to separate the individual iterations from each other. This allows you to have potential release candidates in one branch while continuing to work on new features and development efforts in other branches. You can either create a branch at the beginning of the iteration and work out of there, entirely, or you can work out of the trunk throughout the iteration and branch it at the end.
+
+   If your customer or other stakeholders are not immediately available for review or demonstration of the iteration’s features, then an iteration branching strategy can be very beneficial. You can continue working on the next set of features and functionality while you wait for the customer availability. Once they have reviewed the work and if they suggest any changes, those changes can either be incorporated into the original iteration branch as a potential release, or can be worked into the current or future iterations.
+
+   Branch Per Team/Sub-Team (Hub And Spoke):
+
+   There will be a hub where multiple sub-teams synchronize their own changes, and each hub will synchronize to a further upstream hub.
+
+   If your team is using feature breakdown and rollup techniques that allow individual stories to be implemented independently, you can merge to a hub and show the current state of a feature to a customer. For example, if FeatureA has Story1, Story2 and Story3, you may be able to merge Story1 and Story2 into a “FeatureA” branch when they are done. Let the customers and/or other stakeholders see the current progress of the feature, while Story3 is still being worked on. Then when the Story3 is ready, it can be merge into the FeatureA branch for final testing, and the FeatureA branch can be merged into the main source line when it is ready for delivery.
+
+   Keep your branch strategy simple by building your strategy from these three concepts:
+
+   Use feature branches for all new features and bug fixes.
+   Merge feature branches into the master branch using pull requests.
+   Keep a high quality, up-to-date master branch.
+
+
+   References:
+
+   https://www.visualstudio.com/en-us/articles/git-branching-guidance
+
+   http://dropshado.ws/post/5421706761/git-create-and-checkout-new-branch
+
+   https://www.atlassian.com/git/tutorials/using-branches/git-merge
+
+   https://lostechies.com/derickbailey/2010/02/24/branching-strategies-when-to-branch-and-merge/
+
+   http://svnbook.red-bean.com/en/1.7/svn.branchmerge.using.html
+
+4) Merge conflicts? How to create them? How to resolve them?
+
+   Merge conflicts in git happen, when two branches were changed on the same line or in the same content of a file before a merge. If you just extend a file or append something, git usually just figures it out by itself.
+
+   Sometimes you get merge conflicts when merging or pulling from a branch. Git will then tell you something like
+
+   CONFLICT (content): Merge conflict in Fakefile
+   It also tells you to fix the conflicts and then to commit the result.
+
+   A merge conflict usually occurs when your current branch and the branch you want to merge into the current branch have diverged. That is, you have commits in your current branch which are not in the other branch, and vice versa.
+
+   Typically, there is one branch point, which is the latest common commit. This is the base commit.
+
+   Now, when Git merges the other branch into your current branch, it looks at the differences between the base commit and the current revision, and at the differences between the base commit and the other branch's latest commit. When there are unambiguous differences (i.e. only one side changed a certain piece of code), the changes are applied.The merge conflicts occur when there are disagreeing changes. In that case, your conflicted file will have so-called conflict markers:
+
+   If you changed the same part of the same file differently in the two branches you’re merging together, Git won’t be able to merge them cleanly. If your fix for issue #53 modified the same part of a file as the hotfix, you’ll get a merge conflict that looks something like this:
+
+   $ git merge iss53
+
+   Auto-merging index.html
+   CONFLICT (content): Merge conflict in index.html
+   Automatic merge failed; fix conflicts and then commit the result.
+
+   Git hasn’t automatically created a new merge commit. It has paused the process while you resolve the conflict. If you want to see which files are unmerged at any point after a merge conflict, you can run git status:
+
+   $ git status
+
+   On branch master
+   You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+  Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+  both modified:      index.html
+
+  no changes added to commit (use "git add" and/or "git commit -a")
+
+  Anything that has merge conflicts and hasn’t been resolved is listed as unmerged. Git adds standard conflict-resolution markers to the files that have conflicts, so you can open them manually and resolve those conflicts.
+
+  Create a git Merge Conflict:
+
+  Creating a git merge conflict is easier.
+  <<<<<<< HEAD
+  First you add a file, but create a conflicting change
+
+  on another branch.
+  =======
+  First you add a file.
+
+  Then you add something on another branch and commit it.
+  >>>>>>> new_branch
+
+  How do I resolve a merge conflict in a file?
+  
+  When faced with a merge conflict, the first step is to understand what happened. E.g.: Did one of your colleagues edit the same file on the same lines as you? Did he delete a file that you modified? Did you both add a file with the same name?
+  Git will tell you that you have "unmerged paths" (which is just another way of telling you that you have one or more conflicts) via "git status":
+
+  $ git status
+  # On branch contact-form
+  # You have unmerged paths.
+  #   (fix conflicts and run "git commit")
+  #
+  # Unmerged paths:
+  #   (use "git add <file>..." to mark resolution)
+  #
+  #       both modified:   contact.html
+  #
+  no changes added to commit (use "git add" and/or "git commit -a")
+
+  Let's take an in-depth look on how to solve the most common case, when two changes affected the same file on the same lines.
+  Now is the time to have a look at the contents of the conflicted file. Git was nice enough to mark the problematic area in the file by enclosing it in "<<<<<<< HEAD" and ">>>>>>> [other/branch/name]".
+
+  The contents after the first marker originate from your current working branch. After the angle brackets, Git tells us where (from which branch) the changes came from. A line with "=======" separates the two conflicting changes.
+
+  Our job is now to clean up these lines: when we're done, the file should look exactly as we want it to look. It can be necessary to consult the teammate who wrote the conflicting changes to decide which code is finally correct. Maybe it's yours, maybe it's his - or maybe a mixture between the two.
+
+  Opening the raw file in your editor and cleaning it up there is perfectly valid, but not very comfortable. Using a dedicated merge tool can make this job a great deal easier (if you have one installed...). You can configure your tool of choice using the "git config" command.
+
+  Now, after cleaning up the file with the final code, all that's left is to save it. To give Git a hint that you're done with this file, you should quit the merge tool to continue. Behind the scenes, this told Git to execute a "git add" command on the (now formerly) conflicted file. This marks the conflict as solved. Should you decide not to use a merge tool and instead clean up the file in your editor, you'll have to mark the file as resolved by hand (by executing "git add <filename>").
+
+  Finally, after solving all conflicts, a merge conflict situation needs to be concluded by a regular commit.
+
+  References:
+
+  https://git-scm.com/book/ch3-2.html
+
+  http://imagej.net/Git_Conflicts
+
+  http://jonathanmh.com/how-to-create-a-git-merge-conflict/
+
+  https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line/
+
+  https://www.git-tower.com/learn/git/ebook/en/command-line/advanced-topics/merge-conflicts
+
+5) Explain pull, fetch,statsh commands.
+
+   git pull:
+      - Get the latest changes from origin AND merge
+      - to update your local repository to the newest commit
+      - git pull <remote> : 
+        to update your local repository to the newest commit
+      - Fetches the files from the remote repository and merges it with your local one. This command is equal to the git fetch and 
+        the git merge sequence. Example: git pull origin
+
+    git fetch:
+      -  Get the latest changes from origin (don’t merge).
+      -  Fetches all the objects from the remote repository that are not present in the local one. Example: git fetch origin
+      -  will synchronize you with another repo, pulling down any data that you do not have locally and giving you bookmarks to 
+         where each branch on that remote was when you synchronized. These are called "remote branches" and are identical to local branches except that Git will not allow you to check them out - however, you can merge from them, diff them to other branches, run history logs on them, etc. You do all of that stuff locally after you synchronize.
+      -  If you have more than one remote repository, you can either fetch from specific ones by running git fetch [alias] or you
+         can tell Git to synchronize with all of your remotes by running git fetch --all.
+      -  If you instead want to drop all your local changes and commits, fetch the latest history from the server and point
+         your local master branch at it like this
+
+		 git fetch origin
+		 git reset --hard origin/master
+	  -  git fetch
+         <remote> <branch>  : Fetches a specific <branch>, from the repo. Leave off <branch> to
+                              fetch all remote refs. 
+
+    git stash:
+      -  Take the uncommitted work (modified tracked files and staged changes) and saves it.
+      -  You're in the middle of some changes but something comes up that you need to jump over to, like a so-urgent-right-now
+         bugfix, but don't want to commit or lose your current edits. git stash is there for you.
+      -  add current changes to the stack
+         Stashing takes the current state of the working directory and index, puts it on a stack for later, and gives you back a clean working directory. It will then leave you at the state of the last commit.
+      -  If you have untracked files, git stash will not include them. You can either stage those files with git add (you don't
+         have to commit) before stashing, or, if you have a recent Git version (1.7.7 or above), you can use git stash -u to also stash also unversioned files.
+      -  git stash list:	        Show list of stashes
+         git stash apply	        Reapply the latest stashed contents
+         git stash apply (stash_id)	Reapply a specific stash. (stash id = stash@{2})
+         git stash drop (stash_id)  Drop a specific stash.
+
+    References:
+
+    https://scotch.io/bar-talk/git-cheat-sheet
+
+    file:///C:/Users/mickey/Downloads/atlassian_git_cheatsheet.pdf
+
+    http://rogerdudler.github.io/git-guide/
+
+    https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+
+    https://www.siteground.com/tutorials/git/commands.htm
+
+    
