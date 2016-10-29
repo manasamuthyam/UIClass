@@ -1,0 +1,275 @@
+1) How to create a html document?
+   
+    Here are the steps for creating your first HTML file.
+
+	Go to the text editor window.
+	Enter the following text (you do not have to press RETURN at the end of each line; the WWW browser will word wrap all text):
+
+     <html>
+     <head>
+     <title>Volcanoes!</title>
+     </head>
+     
+     <body>
+     In this lesson you will use the Internet to research 
+     information on volcanoes and then write a report on 
+     your results.
+     </body>
+     </html>
+
+     Save the document as "Volc.html" If you are using a word processor porgram to create your HTML, be sure to save in plain text (or ASCII) format.By using this file name extension, a web browser will know to read these text files as HTML and properly display the web page.
+
+     An HTML document contains two distinct parts, the head and the body. The head contains information about the document that is not displayed on the screen. The body then contains everything else that is displayed as part of the web page.
+	 The basic structure then of any HTML page is:
+
+
+  	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+  	<html>
+  	<head>
+  	<!-- header info used to contain extra information about
+       this document, not displayed on the page -->
+  	</head>
+
+  	<body>
+  
+  	<!-- all the HTML for display -->
+          :      :
+          :      :
+          :      :
+  	</body>
+  	</html>
+	The very first line:
+  	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+	is not technically required, but is a code that tells the browser what version of HTML the current page is written for.
+
+	References:
+
+	http://www.math.unm.edu/writingHTML/tut/tut1.html
+
+	http://www.math.unm.edu/writingHTML/tut/tut1.html
+
+	http://w3.marietta.edu/~mcshaffd/vert/howhtml.html
+
+    https://www.sec.gov/info/edgar/quick-reference/create-simple-html-files.pdf
+
+    http://www.liutilities.com/how-to/create-an-html-document/
+
+ 2)What is element in HTML?
+
+   Elements are the bits that make up web pages.
+   The <html> element defines the whole document.
+   You would say, for example, that everything that is in between (and includes) the <body> and </body> tags is the body element.
+   As another example, whereas “<title>” and “</title>” are tags, “<title>Rumple Stiltskin</title>” is a title element.
+
+   An HTML element is an individual component of an HTML document or web page, once this has been parsed into the Document Object Model. HTML is composed of a tree of HTML elements and other nodes, such as text nodes. Each element can have HTML attributes specified. Elements can also have content, including other elements and text. Many HTML elements represent semantics, or meaning. For example, the title element represents the title of the document.
+
+   An HTML element is defined by a starting tag. If the element contains other content, it ends with a closing tag, where the element name is preceded by a forward slash as shown below with few tags:
+
+	Start Tag	Content						End Tag
+	<p>			This is paragraph content.	</p>
+	<h1>		This is heading content.	</h1>
+	<div>		This is division content.	</div>
+
+	"Elements" and "tags" are terms that are widely confused. HTML documents contain tags, but do not contain the elements. The elements are only generated after the parsing step, from these tags.
+
+	References:
+
+	https://en.wikipedia.org/wiki/HTML_element
+
+	http://www.w3schools.com/html/html_elements.asp
+
+	https://www.tutorialspoint.com/html/html_elements.htm
+
+	https://developer.mozilla.org/en-US/docs/Web/HTML/Element
+
+	http://htmldog.com/guides/html/beginner/tags/
+
+3)What is an attribute in HTML?
+  
+  An HTML attribute is an associated property of an HTML element and used to extend the capability of an HTML element.
+
+  HTML attributes (usually) have values and are written after a "=" after the name of the attribute.
+
+  Attribute value pair is placed before the last ">" of an HTML start tag.
+  
+  Any number of attribute value pairs (if they are applicable to that element) separated by space (white space) can be used with an element.
+
+  In HTML 4.01, values of the attributes may be wrapped by double quotes, which is not mandatory. But in XHTML it is mandatory.
+
+  HTML attribute names are case sensitive.
+
+  Values of HTML attributes are not case sensitive.
+
+  An attribute is used to define the characteristics of an HTML element and is placed inside the element's opening tag. All attributes are made up of two parts: a name and a value:
+
+  The name is the property you want to set. For example, the paragraph <p> element in the example carries an attribute whose name is align, which you can use to indicate the alignment of paragraph on the page.
+
+  The value is what you want the value of the property to be set and always put within quotations. The below example shows three possible values of align attribute: left, center and right.
+
+  Attribute names and attribute values are case-insensitive. However, the World Wide Web Consortium (W3C) recommends lowercase attributes/attribute values in their HTML 4 recommendation.
+
+  All HTML elements can have attributes
+  Attributes provide additional information about an element
+  Attributes are always specified in the start tag
+  Attributes usually come in name/value pairs like: name="value"
+  
+  Examples:
+
+  The lang Attribute:
+  The language of the document can be declared in the <html> tag.
+  The language is declared with the lang attribute.
+
+  Declaring a language is important for accessibility applications (screen readers) and search engines:
+
+  <!DOCTYPE html>
+  <html lang="en-US">
+  <body>
+
+  ...
+
+  </body>
+  </html>
+  The first two letters specify the language (en). If there is a dialect, use two more letters (US).
+
+  The title Attribute:
+  Here, a title attribute is added to the <p> element. The value of the title attribute will be displayed as a tooltip when you mouse over the paragraph:
+
+  Example
+  <p title="I'm a tooltip">
+  This is a paragraph.
+  </p>
+
+  References:
+
+  https://en.wikipedia.org/wiki/HTML_attribute
+
+  http://www.w3schools.com/html/html_attributes.asp
+
+  https://www.tutorialspoint.com/html/html_attributes.htm
+
+  http://htmldog.com/guides/html/beginner/tags/
+
+  http://www.w3resource.com/html/attributes/HTML-attributes.php
+
+4) Parent and Child elements?
+
+  The terms parent, child, and sibling are used to describe the relationships.
+
+  In a node tree, the top node is called the root (or root node)
+  Every node has exactly one parent, except the root (which has no parent)
+  A node can have a number of children
+  Siblings (brothers or sisters) are nodes with the same parent
+  <html>
+
+  <head>
+      <title>DOM Tutorial</title>
+  </head>
+
+  <body>
+      <h1>DOM Lesson one</h1>
+      <p>Hello world!</p>
+  </body>
+
+ </html>
+ Node tree
+ From the HTML above you can read:
+
+ <html> is the root node
+ <html> has no parents
+ <html> is the parent of <head> and <body>
+ <head> is the first child of <html>
+ <body> is the last child of <html>
+ and
+ <head> has one child: <title>
+ <title> has one child (a text node): "DOM Tutorial"
+ <body> has two children: <h1> and <p>
+ <h1> has one child: "DOM Lesson one"
+ <p> has one child: "Hello world!"
+ <h1> and <p> are siblings
+
+ References:
+
+ http://www.w3schools.com/cssref/sel_element_gt.asp
+
+ http://www.w3schools.com/js/js_htmldom_navigation.asp
+
+ http://www.w3schools.com/jsref/prop_node_parentelement.asp
+
+5) Versions of HTML 4 and 5 and their release dates.
+
+   HTML 4.01:
+   HTML 4.0 was a large evolution of the HTML standards, and the last iteration of classic HTML. Early in development it had the code-name COUGAR. Most of the new functionality brought in this time is from the ill-fated HTML 3.0 spec, as well as a host of trimmings on old tags, a focus on internationalisation, and support for HTML’s new supporting presentational language, cascading stylesheets.
+
+   HTML 4.0 was recommended by the W3C in December ’97 and became the official standard in April 1998. Browser support was undertaken surprisingly earnestly by Microsoft in their Internet Explorer browser, and the market-leading IE5 (and current successor IE6) have excellent support for almost all of the new tags and attributes. In comparison, Netscape’s terribly flawed Navigator 4.7 was inept when it came to HTML 4.0 and even basic CSS. Modern browsers however, are a vast improvement.
+
+   Once HTML 4.0 had been out for a little while, the documentation was revised and corrected in a few minor ways and was entitled HTML 4.01; the final version of the specification.
+
+   HTML5:
+   HTML5 is a markup language used for structuring and presenting content on the World Wide Web. It is the fifth and current version of the HTML standard.
+
+   It was published in October 2014 by the World Wide Web Consortium to improve the language with support for the latest multimedia, while keeping it both easily readable by humans and consistently understood by computers and devices such as web browsers, parsers, etc. HTML5 is intended to subsume not only HTML 4, but also XHTML 1 and DOM Level 2 HTML.
+
+   HTML5 includes detailed processing models to encourage more interoperable implementations; it extends, improves and rationalizes the markup available for documents, and introduces markup and application programming interfaces (APIs) for complex web applications. For the same reasons, HTML5 is also a candidate for cross-platform mobile applications, because it includes features designed with low-powered devices in mind.
+
+   References:
+ 
+   https://en.wikipedia.org/wiki/HTML5
+
+   https://en.wikipedia.org/wiki/HTML_element
+
+   http://www.yourhtmlsource.com/starthere/historyofhtml.html
+
+   http://www.yourhtmlsource.com/accessibility/html4explained.html
+
+   http://www.ironspider.ca/webdesign101/htmlhistory.htm
+
+6) Changes from html 4 to html 5
+
+   1. HTML5 Is a Work in Progress:
+      Elements and attributes are added and modified several times a year. Of course, this is dependent how much you depend on rich elements, but it’s certainly a risk you must take into consideration when using a fluid language.
+   2. Simplified Syntax 
+      The simpler doctype declaration is just one of the many novelties in HTML5. Now you need to write only: <!doctype html> and this is it. The syntax of HTML5 is compatible with HTML4 and XHTML1, but not with SGML.
+   3. The New <canvas> Element
+   4. The <header> and <footer> Elements
+      For good or bad, HTML5 has acknowledged the new web anatomy. With HTML5, <header> and <footer> are specifically marked for such. Because of this, it is unnecessary to identify these two elements with a <div> tag.
+   5. New <section> and <article> Elements
+	  Again, HTML5 has adopted the popular web standard. <section> and <article> allows you to mark specific areas of your layout as such, and should have a positive effect on on your SEO in the end.
+
+   6. New <menu> and <figure> Elements
+      <menu> can be used for your main menu, but it can also be used for toolbars and context menus. The <figure> element is another way to arrange text and images.
+   7. New <audio> and <video> Elements
+   8. New Forms
+   9. <b> and <font> Goodbye!
+   10. No More <frame>, <center>, <big>
+
+   References:
+
+   http://www.go4expert.com/articles/html4-vs-html5-comparison-t30141/
+
+   https://www.w3.org/TR/html5-diff/
+
+   http://electronicdesign.com/embedded/whats-difference-between-html-4-and-html-5
+
+   http://www.differencebtw.com/difference-between-html-and-html5/
+
+   http://www.rapidprogramming.com/questions-answers/What-is-the-difference-between-HTML-5-and-HTML-4--517
+
+ 7) Why do we need to use HTML?
+
+    We use HTML is because you can make a page however you want. HTML is used for designing websites. HTML is the language (often used inreators that don't allow to use HTML don't have as much of a variety.HTML is used for designing websites. HTML is the language (often used in combination with other web design languages such as Javascript or CSS) that tells a web browser what color a web page is, what font a certain portion of text is, where pictures should appear and what size they should be, etc. It basically tells your browser how a web page is designed and should be displayed on your screen.
+
+    You can see an HTML example by finding the option "viewsource" in your browser (normally by right-clicking anywhere on the page), it will show you the code used to create the page you are looking at now.
+
+    Site authors use HTML to format text as titles and headings, to arrange graphics on a webpage, to link to different pages within a website, and to link to different websites.
+
+    HTML is the most basic web language. You would use HTML instead of another language such as PHP for basic web pages not utilizing applications or databases. Though you could just design in PHP and get the same results as it also renders HTML code. 
+
+    References:
+
+    https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=0ahUKEwiJlIvZlP_PAhWjh1QKHSfaB3sQFgggMAE&url=http%3A%2F%2Fwww.draac.com%2FWhatHTMLUsedFor.html&usg=AFQjCNG2e_9M4lj20N_Rfjx5NNhZkjf0ew&sig2=r49FwAkwdmn7cxvHUGDaoQ&bvm=bv.137132246,d.cGw
+
+    http://www.answers.com/Q/Why_is_HTML_useful#slide=9
+    
+    http://www.mediacollege.com/internet/html/why-learn.html
+
+    http://tympanus.net/codrops/2011/11/24/top-10-reasons-to-use-html5-right-now/
