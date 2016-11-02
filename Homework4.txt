@@ -1,0 +1,832 @@
+1) Write a html page using all the input type attributes value and explain them ? 
+
+  <!DOCTYPE html>
+<html>
+<body>
+
+<form action="demo_form.asp">
+  Username: <input type="text" name="usrname"><br>
+<br><br>
+  <input type="button" value="Click me" onclick="msg()">
+
+
+<p>The button above activates a JavaScript when it is clicked.</p>
+
+<script>
+function msg() {
+    alert("Hello world!");
+}
+</script>
+<br><br>
+Telephone: <input type="tel" name="usrtel"><br>
+
+  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+  <input type="checkbox" name="vehicle3" value="Boat"> I have a boat<br>
+<br><br>
+Points: <input type="range" name="points" min="0" max="10"><br><br>
+  Select your favorite color: <input type="color" name="favcolor"><br>
+<bR>
+Email: <input type="text" name="email"><br><br>
+  Password: <input type="password" name="pwd" maxlength="8"><br><br>
+
+  Birthday: <input type="date" name="bday">
+  <input type="submit">
+<br><bR>
+
+  Birthday (date and time): <input type="datetime-local" name="bdaytime"><br><br>
+<input type="radio" name="gender" value="male"> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="other"> Other<br><br>
+Search Google: <input type="search" name="googlesearch"><br><br>
+
+E-mail: <input type="email" ><br><br>
+Select a file: <input type="file" name="img">
+  <input type="submit"><br><br>
+First name: <input type="text" name="fname"><br>
+  <input type="hidden" name="country" value="Norway"><bR><bR>
+<input type="image" src="img_submit.gif" alt="Submit" width="48" height="48"><bR><bR>
+Birthday (month and year): <input type="month" name="bdaymonth"><br><br>
+Quantity (between 1 and 5): <input type="number" name="quantity" min="1" max="5"><br><br>
+Select a time: <input type="time" name="usr_time"><br><br>
+Add your homepage: <input type="url" name="homepage"><br><br>
+Select a week: <input type="week" name="year_week"><br><br>
+</form>
+<form action="demo_form.asp">
+  Email: <input type="text" name="email"><br>
+  Pin: <input type="text" name="pin" maxlength="4"><br><bR>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+Explanation:
+ 
+ HTML <input> type Attribute
+ The type attribute specifies the type of <input> element to display.
+ The default type is: text.
+
+ Value	                     Description
+ -------                 --------------------
+ button  		Defines a clickable button (mostly used with a JavaScript to activate a script)
+checkbox		Defines a checkbox
+color	    	Defines a color picker
+date	    	Defines a date control (year, month and day (no time))
+datetime-local	Defines a date and time control (year, month, day, hour, minute, second, and fraction of a second (no time zone)
+email			Defines a field for an e-mail address
+file			Defines a file-select field and a "Browse..." button (for file uploads)
+hidden			Defines a hidden input field
+image			Defines an image as the submit button
+month			Defines a month and year control (no time zone)
+number			Defines a field for entering a number
+password		Defines a password field (characters are masked)
+radio			Defines a radio button
+range			Defines a control for entering a number whose exact value is not important (like a slider control)
+reset			Defines a reset button (resets all form values to default values)
+search			Defines a text field for entering a search string
+submit			Defines a submit button
+tel				Defines a field for entering a telephone number
+text			Default. Defines a single-line text field (default width is 20 characters)
+time			Defines a control for entering a time (no time zone)
+url				Defines a field for entering a URL
+week			Defines a week and year control (no time zone)
+
+REFERENCES:
+http://www.w3schools.com/TAGS/att_input_type.asp
+http://www.html-5-tutorial.com/input-element.php
+http://eloquentjavascript.net/18_forms.html
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/My_first_HTML_form
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form
+
+
+
+2) please use the following elements and develop a webpage : audio, video, canvas, svg ? explain how to use the elements and their attributes to be used.
+
+<!DOCTYPE html>
+<html>
+<body>
+AUDIO
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+<BR><BR>
+VIDEO
+<video width="400" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video><BR><BR>
+CANVAS<BR>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+</script><BR><BR>
+<canvas id="myCanvas1" width="200" height="100" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas1");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+</script><BR><Br>
+
+
+SVG<Br>
+<svg width="300" height="200">
+  <polygon points="100,10 40,198 190,78 10,78 160,198"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+Sorry, your browser does not support inline SVG.
+</svg>
+</body>
+</html>
+
+
+
+HTML5 Audio:
+**************
+Before HTML5, audio files could only be played in a browser with a plug-in (like flash).
+The HTML5 audio> element specifies a standard way to embed audio in a web page.
+To play an audio file in HTML, use the <audio> element:
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+The controls attribute adds audio controls, like play, pause, and volume.
+
+The <source> element allows you to specify alternative audio files which the browser may choose from. The browser will use the first recognized format.
+
+The text between the <audio> and </audio> tags will only be displayed in browsers that do not support the <audio> element.
+HTML5 defines DOM methods, properties, and events for the <audio> element.
+This allows you to load, play, and pause audios, as well as set duration and volume.
+There are also DOM events that can notify you when an audio begins to play, is paused, etc.
+
+Tag	        Description
+<audio>	    Defines sound content
+<source>	Defines multiple media resources for media elements, such as <video> and <audio>
+
+HTML5 Video
+************
+Before HTML5, a video could only be played in a browser with a plug-in (like flash).
+The HTML5 <video> element specifies a standard way to embed a video in a web page.
+To show a video in HTML, use the <video> element:
+Example:
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+The controls attribute adds video controls, like play, pause, and volume.
+It is a good idea to always include width and height attributes. If height and width are not set, the page might flicker while the video loads.
+The <source> element allows you to specify alternative video files which the browser may choose from. The browser will use the first recognized format.
+The text between the <video> and </video> tags will only be displayed in browsers that do not support the <video> element.
+
+HTML <video> Autoplay:
+To start a video automatically use the autoplay attribute:
+
+Example
+<video width="320" height="240" autoplay>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+In HTML5, there are 3 supported video formats: MP4, WebM, and Ogg.
+
+Tag	        Description
+<video>	    Defines a video or movie
+<source>	Defines multiple media resources for media elements, such as <video> and <audio>
+<track>	    Defines text tracks in media players
+
+HTML5 Canvas
+***************
+
+The HTML <canvas> element is used to draw graphics on a web page.
+The HTML <canvas> element is used to draw graphics, on the fly, via JavaScript.
+The <canvas> element is only a container for graphics. You must use JavaScript to actually draw the graphics.
+Canvas has several methods for drawing paths, boxes, circles, text, and adding images.
+A canvas is a rectangular area on an HTML page. By default, a canvas has no border and no content.
+The markup looks like this:
+<canvas id="myCanvas" width="200" height="100"></canvas>
+
+ To add a border, use the style attribute.
+ <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+</canvas>
+
+Draw a Line
+Example
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.moveTo(0,0);
+ctx.lineTo(200,100);
+ctx.stroke();
+
+Draw a Circle
+Example
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+Draw a Text
+Example
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.fillText("Hello World",10,50);
+
+Stroke Text
+Example
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Hello World",10,50);
+Try it Yourself »
+
+
+Draw Linear Gradient
+Example
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createLinearGradient(0,0,200,0);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+
+Draw Circular Gradient
+Example
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+// Create gradient
+var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+grd.addColorStop(0,"red");
+grd.addColorStop(1,"white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10,10,150,80);
+Try it Yourself »
+
+Draw Image
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var img = document.getElementById("scream");
+ctx.drawImage(img,10,10);
+
+HTML5 SVG
+***********
+SVG stands for Scalable Vector Graphics
+SVG is used to define graphics for the Web
+The HTML <svg> element is a container for SVG graphics.
+SVG has several methods for drawing paths, boxes, circles, text, and graphic images.
+
+SVG Circle
+Example
+<!DOCTYPE html>
+<html>
+<body>
+
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+
+</body>
+</html>
+
+Resolution independent
+Support for event handlers
+Best suited for applications with large rendering areas (Google Maps)
+Slow rendering if complex (anything that uses the DOM a lot will be slow)
+Not suited for game applications
+
+Differences Between SVG and Canvas
+SVG is a language for describing 2D graphics in XML.
+
+Canvas draws 2D graphics, on the fly (with a JavaScript).
+
+SVG is XML based, which means that every element is available within the SVG DOM. You can attach JavaScript event handlers for an element.
+
+In SVG, each drawn shape is remembered as an object. If attributes of an SVG object are changed, the browser can automatically re-render the shape.
+
+Canvas is rendered pixel by pixel. In canvas, once the graphic is drawn, it is forgotten by the browser. If its position should be changed, the entire scene needs to be redrawn, including any objects that might have been covered by the graphic.
+
+REFERENCES:
+https://www.tutorialspoint.com/html5/html5_audio_video.htm
+https://www.w3.org/TR/SVG2/embedded.html
+https://en.wikipedia.org/wiki/HTML5
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_HTML5_audio_and_video
+http://stackoverflow.com/questions/8600393/there-is-a-4px-gap-below-canvas-video-audio-elements-in-html5
+
+
+3) links, lists (orderes, unordered), tables?
+
+
+<!DOCTYPE html>
+<html>
+<HEAD>
+<style>
+a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}
+</style>
+</HEAD>
+<body>
+
+<p><a href="http://www.w3schools.com/html/">Visit our HTML tutorial</a></p>
+<a href="http://www.w3schools.com/html/" target="_blank"> HTML tutorial!</a>
+
+<p>If you set the target attribute to "_blank", the link will open in a new browser window or tab.</p>
+<p>The image is a link. You can click on it.</p>
+
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0">
+</a>
+
+<p><a href="#C4">Jump to Chapter 4</a></p>
+
+<h2>Chapter 1</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 2</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 3</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2 id="C4">Chapter 4</h2>
+<p>This chapter explains ba bla bla</p>
+
+<h2>Chapter 5</h2>
+<p>This chapter explains ba bla bla</p>
+<H2>Unordered List</H2>
+<ul style="list-style-type:square">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul><Br>
+<h2>Ordered List with Letters</h2>
+
+<ol type="A">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<table style="width:100%">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+ HTML Links:
+ ***********
+ Links are found in nearly all web pages. Links allow users to click their way from page to page.
+
+HTML Links - Hyperlinks
+HTML links are hyperlinks.
+You can click on a link and jump to another document.
+When you move the mouse over a link, the mouse arrow will turn into a little hand.
+Note: A link does not have to be text. It can be an image or any other HTML element.
+HTML Links - Syntax
+In HTML, links are defined with the <a> tag:
+
+<a href="url">link text</a>
+
+Example
+<a href="http://www.w3schools.com/html/">Visit our HTML tutorial</a>
+
+Local Links
+The example above used an absolute URL (A full web address).
+A local link (link to the same web site) is specified with a relative URL (without http://www....).
+
+Example
+<a href="html_images.asp">HTML Images</a>
+
+HTML Link Colors
+By default, a link will appear like this (in all browsers):
+
+An unvisited link is underlined and blue
+A visited link is underlined and purple
+An active link is underlined and red
+You can change the default colors, by using styles:
+
+Example
+<style>
+a:link    {color:green; background-color:transparent; text-decoration:none}
+a:visited {color:pink; background-color:transparent; text-decoration:none}
+a:hover   {color:red; background-color:transparent; text-decoration:underline}
+a:active  {color:yellow; background-color:transparent; text-decoration:underline}
+</style>
+
+HTML Links - The target Attribute
+The target attribute specifies where to open the linked document.
+
+The target attribute can have one of the following values:
+
+_blank - Opens the linked document in a new window or tab
+_self - Opens the linked document in the same window/tab as it was clicked (this is default)
+_parent - Opens the linked document in the parent frame
+_top - Opens the linked document in the full body of the window
+framename - Opens the linked document in a named frame
+This example will open the linked document in a new browser window/tab:
+
+Example
+<a href="http://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+Try it Yourself »
+HTML Links - Image as Link
+It is common to use images as links:
+
+Example
+<a href="default.asp">
+  <img src="smiley.gif" alt="HTML tutorial" style="width:42px;height:42px;border:0;">
+</a>
+HTML Links - Create a Bookmark
+HTML bookmarks are used to allow readers to jump to specific parts of a Web page.
+
+Bookmarks can be useful if your webpage is very long.
+
+To make a bookmark, you must first create the bookmark, and then add a link to it.
+
+When the link is clicked, the page will scroll to the location with the bookmark.
+
+Example
+First, create a bookmark with the id attribute:
+
+<h2 id="tips">Useful Tips Section</h2>
+Then, add a link to the bookmark ("Useful Tips Section"), from within the same page:
+
+<a href="#tips">Visit the Useful Tips Section</a>
+Or, add a link to the bookmark ("Useful Tips Section"), from another page:
+
+Example
+<a href="html_tips.html#tips">Visit the Useful Tips Section</a>
+
+HTML LISTS:
+**************
+
+Unordered HTML List
+An unordered list starts with the <ul> tag. Each list item starts with the <li> tag.
+
+The list items will be marked with bullets (small black circles) by default:
+
+Example
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+Unordered HTML List - Choose List Item Marker
+The CSS list-style-type property is used to define the style of the list item marker:
+
+Value	Description
+disc	Sets the list item marker to a bullet (default)
+circle	Sets the list item marker to a circle
+square	Sets the list item marker to a square
+none	The list items will not be marked
+Example - Disc
+<ul style="list-style-type:disc">
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+Ordered HTML List
+An ordered list starts with the <ol> tag. Each list item starts with the <li> tag.
+
+The list items will be marked with numbers by default:
+
+Example
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+The type attribute of the <ol> tag, defines the type of the list item marker:
+
+Type	Description
+type="1"	The list items will be numbered with numbers (default)
+type="A"	The list items will be numbered with uppercase letters
+type="a"	The list items will be numbered with lowercase letters
+type="I"	The list items will be numbered with uppercase roman numbers
+type="i"	The list items will be numbered with lowercase roman numbers
+
+
+HTML Description Lists
+HTML also supports description lists.
+
+A description list is a list of terms, with a description of each term.
+
+The <dl> tag defines the description list, the <dt> tag defines the term (name), and the <dd> tag describes each term: 
+
+Example
+<dl>
+  <dt>Coffee</dt>
+  <dd>- black hot drink</dd>
+  <dt>Milk</dt>
+  <dd>- white cold drink</dd>
+</dl>
+
+Horizontal Lists
+HTML lists can be styled in many different ways with CSS.
+
+One popular way is to style a list horizontally, to create a menu:
+
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111111;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
+
+HTML Table:
+************
+
+Use the HTML <table> element to define a table
+Use the HTML <tr> element to define a table row
+Use the HTML <td> element to define a table data
+Use the HTML <th> element to define a table heading
+Use the HTML <caption> element to define a table caption
+Use the CSS border property to define a border
+Use the CSS border-collapse property to collapse cell borders
+Use the CSS padding property to add padding to cells
+Use the CSS text-align property to align cell text
+Use the CSS border-spacing property to set the spacing between cells
+Use the colspan attribute to make a cell span many columns
+Use the rowspan attribute to make a cell span many rows
+Use the id attribute to uniquely define one table
+
+
+References:
+https://www.youtube.com/watch?v=y2kAcHv-OaE
+https://en.wikipedia.org/wiki/HTML_element
+http://www.simplehtmlguide.com/cheatsheet.php
+https://www.w3.org/TR/html4/struct/links.html
+http://www.w3schools.com/html/html_lists.asp
+
+
+4) Differences between HTML 4 and HTML 5?
+
+Difference in Tags:
+
+• <!DOCTYPE  html> : In  HTML 4.01, there are three different <!DOCTYPE> declarations  but  In HTML 5 there is only one  <! DOCTYPE html>
+
+• <a >:  In HTML 4.01, the <a> tag could be either a hyperlink or an anchor. In HTML5, the <a> tag is always a hyperlink, but if it has no href attribute, it is only a placeholder for a hyperlink.
+
+• <acronym> : The <acronym> tag is not supported in HTML5. Use the <abbr> tag instead. The <acronym> tag was used to define acronyms in HTML 4.01.
+
+• <applet>: The <applet> tag is not supported in HTML5.  Use the  <object> tag instead.
+
+• <strong>: In HTML 4.01, the <strong> tag defines strong emphasized text, but in HTML5 it defines important text.
+
+• <body> :   In HTML5, all <body> specific attributes are removed, while in HTML 4.01 they were deprecated.
+• <hr>: In HTML 4.01, the <hr> tag represented a horizontal rule. In HTML5, the <hr> tag defines a thematic break. The <hr> element is used to separate content (or define a change) in an HTML page.
+
+• <map> : In HTML5, if the id attribute of the <map> tag is also specified, it must have the same value as the name attribute.
+
+• <meta> :  The scheme attribute is not supported in HTML5.
+
+HTML5 has a new attribute, charset, which makes it easier to define charset:
+
+HTML 4.01: <Meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+HTML5 : <meta charset="UTF-8”>
+
+• <script> : The "type" attribute is required in HTML 4, but optional in HTML5.
+
+•<small >  : In HTML 4.01 the small element is displayed as smaller text. In HTML5 the small element defines small text and other side comments, and is displayed as smaller text.
+
+•<table>:  Only the "border" attribute is supported in HTML5, and it only allows the values " " or "1".
+
+New Semantic/Structural Elements :
+
+HTML5 offers new elements for better structure:
+
+<article>  :  Defines an article
+
+<aside>  :  Defines content aside from   the page content
+
+<bdi>   : Isolates a part of text that might be formatted in a   different
+
+direction from other text outside it
+
+<command>   :   Defines a command button   that a user can invoke
+
+<details>   :   Defines additional details   that the user can view or hide
+
+<summary>    :    Defines a visible heading   for a <details> element
+
+<figure>   :  Specifies self-contained   content, like illustrations, diagrams, photos, code listings, etc.
+
+<figcaption>   : Defines a caption for a   <figure> element
+
+<footer>   :  Defines a footer for a   document or section.
+
+<header>   :   Defines a header for a   document or section
+
+<hgroup>   :   Groups a set of <h1>   to <h6> elements when a heading has multiple levels.
+
+<mark>   :   Defines marked/highlighted   text.
+
+<meter>  :   Defines a scalar   measurement within a known range (a gauge).
+
+<nav>   :    Defines navigation links.
+
+<progress>   :   Represents the progress of   a task.
+
+<ruby>    :   Defines a ruby annotation   (for East Asian typography).
+
+<rt>   : Defines an   explanation/pronunciation of characters (for East Asian typography).
+
+<rp>   :  Defines what to show in browsers that do not support ruby   annotations
+
+<section>   :  Defines a section in a   document
+
+<time>  :  Defines a date/time
+
+<wbr>  :  Defines a possible line-break .
+
+New Media Elements :
+
+HTML5 offers new elements for media content:
+
+<audio>  :  Defines sound content.
+
+<video>  :  Defines a video or movie.
+
+<source>  : Defines multiple media   resources for <video> and <audio>.
+
+<embed>  :  Defines a container for an external application or   interactive content (a plug-in).
+
+<track>  :   Defines text tracks for   <video> and <audio>.
+
+References:
+http://stackoverflow.com/questions/134727/whats-the-key-difference-between-html-4-and-html-5
+https://churchm.ag/differences-between-html4-html5/
+http://www.rapidprogramming.com/questions-answers/What-is-the-difference-between-HTML-5-and-HTML-4--517
+http://www.ijceronline.com/papers/Vol2_issue5/AR02514301437.pdf
+
+
+
+5) what is doctype and why do we use it?
+
+The doctype declaration should be the very first thing in an HTML document, before the tag.
+
+The doctype declaration is not an HTML tag; it is an instruction to the web browser about what version of the markup language the page is written in.
+
+The doctype declaration refers to a Document Type Definition (DTD). The DTD specifies the rules for the markup language, so that the browsers render the content correctly.
+
+HTML5 is not based on SGML, and therefore does not require a reference to a DTD.
+
+Browsers need at the least to render in what is known as standards mode. See John Resig's article on the html 5 doctype: http://ejohn.org/blog/html5-doctype/. Now if you want your browser to not use standards and render like its 1990 go ahead and not add anything and you will see floats and other now standard items not work correctly. If you want to have your page render/validate in accordance to a particular standard then you would want to add more to the doc type but it is not necessary.
+
+The Doctype does two things:
+
+-It identifies which dialect of HTML you're using.
+-It controls whether the browsers uses "standards" or "quirks" mode to render the document.
+
+If there is no doctype, or there's an unrecognized one, then it uses "quirks" mode and interprets the document as best it can. If there IS a doctype, and it recognizes it, then it follows the standards. The results of the rendering can vary depending on how it interprets the document.
+
+References:
+http://stackoverflow.com/questions/6076432/why-do-i-need-a-doctype-what-does-it-do
+http://www.w3schools.com/TAGS/tag_doctype.asp
+http://www.html-5-tutorial.com/doctype.htm
+http://www.htmlgoodies.com/html5/markup/the-doctype-tag-and-its-effect-on-page-rendering.html#fbid=DH5SGJU3sHs
+https://en.wikipedia.org/wiki/Document_type_declaration
+
+
+6) what is basic html structure in a webpage
+
+<html>
+
+
+<head>
+
+</head>
+
+
+<body>
+
+</body>
+
+
+</html>
+
+A web page constructed using HTML has a basic and essential structure. The page always begins with the start tag of the html element and always terminates with the end tag of the html element as follows:
+
+Example 1
+
+<html>
+
+...web page...
+
+</html>
+
+
+The html element basically tells your computer that this is an HTML document. All other element tags are 'nested' within the start and end html tags. The web page is then further subdivided into two main sections which are the 'head' and the 'body'. 
+
+The head section begins with the <head> start tag and terminates with the </head> end tag. Immediately following this comes the <body> start tag and just before the html end tag comes the </body> end tag. 
+
+There is only one set of <html>...</html> tags, one set of <head>...</head> tags and one set of <body>...</body> tags. This basic HTML web page structure can be illustrated by the following example:
+
+The head section or document head has little content and mostly contains HTML coded instructions on how to title, categorize and 'run' the web page. 
+The body section or document body on the other hand contains almost all of the content that you will put on your web page and this content —usually text but can also be pictures and sounds— is formatted using more HTML code. All text that you place outside of any angle brackets will become 'visible text' and will be displayed by your web browser on your web page. 
+
+By placing that text in between the start and end tags of certain HTML elements, you can instruct a web browser where and how to display that text.
+
+References:
+http://www.ironspider.ca/basic_html/structure.htm
+https://www.w3.org/wiki/HTML_structural_elements
+https://css-tricks.com/snippets/html/html5-page-structure/
+http://webstyleguide.com/wsg3/6-page-structure/3-site-design.html
+https://www.youtube.com/watch?v=Bzohr7uqBS0
